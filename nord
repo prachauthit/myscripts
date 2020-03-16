@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+#sed -i 's/auth-user-pass/auth-user-pass \/home\/user\/.vpn\/ovpn_tcp\/pass.txt/g'
+VPN=$(ls $HOME/.vpn/ovpn_tcp/uk* | shuf -n 1)
+sudo /usr/bin/openvpn --config $VPN --writepid /run/openvpn.pid
